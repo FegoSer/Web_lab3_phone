@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #d1cfcf;
+}
+
+.container {
+  display: grid;
+  min-height: 100vh;
+  padding: 1px;
+  box-sizing: border-box;
+
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 0.45fr 2fr 0.3fr 0.45fr;
+}
+
+.block {
+  border: 1px solid #333;
+  padding: 20px;
+  font-size: 1em;
+  font-weight: bold;
+  background-color: white;
+}
+
+
+.block1 {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+  background-color: #c3cdf8;
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.block2 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  background-color: #facf79;
+  text-align: center;
+}
+
+.block3 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  text-align: right;
+  background-color: #d9dddc;
+}
+
+.block3 img {
+  max-width: 35%;
+  height: auto;
+  display: block;
+}
+
+.block4 {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3; 
+  background-color: #facf79;
+  text-align: right;
+}
+
+.block5 {
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+  background-color: #a6fcad;
+}
+
+.block6 {
+  grid-column: 1 / 4;
+  grid-row: 4 / 5;
+  background-color: #c3cdf8;
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-button {
+  padding: 0.5em 1em;
+  font-size: clamp(0.25rem, 0.5vw, 0.5em);
+  border: 2px solid #333;
+  background-color: #a4c4db;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-button {
+  background-color: #f3c143;
+  border: 1px solid #333;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+  }
+
+  .block1,
+  .block2,
+  .block3,
+  .block4,
+  .block5,
+  .block6 {
+    grid-column: 1 / 2;
+  }
+
+  .block1 { grid-row: 1 / 2; }
+  .block2 { grid-row: 2 / 3; }
+  .block3 { grid-row: 3 / 4; }
+  .block4 { grid-row: 4 / 5; }
+  .block5 { grid-row: 5 / 6; }
+  .block6 { grid-row: 6 / 7; }
+
+  .block1, .block6 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .block3 {
+    text-align: left;
+  }
+}
